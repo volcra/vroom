@@ -9,19 +9,21 @@ Scrum Web Application
 
 ## Vagrant Installation
 
-* Get vagrant from
+* Get vagrant from [Vagrant](http://www.vagrantup.com/)
 * To download the Ubuntu image run
 
 ```
-vagrant box add ubuntu/trusty32-juju
+vagrant box add ubuntu/trusty32
 
-==> box: Loading metadata for box 'ubuntu/trusty32-juju'
-    box: URL: https://vagrantcloud.com/ubuntu/trusty32-juju
-==> box: Adding box 'ubuntu/trusty32-juju' (v14.04) for provider: virtualbox
-    box: Downloading: https://vagrantcloud.com/ubuntu/trusty32-juju/version/1/provider/virtualbox.box
-    box: Progress: 100% (Rate: 3140k/s, Estimated time remaining: --:--:--)
-==> box: Successfully added box 'ubuntu/trusty32-juju' (v14.04) for 'virtualbox'!
+==> box: Loading metadata for box 'ubuntu/trusty32'
+    box: URL: https://vagrantcloud.com/ubuntu/trusty32
+==> box: Adding box 'ubuntu/trusty32' (v14.04) for provider: virtualbox
+    box: Downloading: https://vagrantcloud.com/ubuntu/trusty32/version/1/provider/virtualbox.box
+    box: Progress: 100% (Rate: 1644k/s, Estimated time remaining: --:--:--)
+==> box: Successfully added box 'ubuntu/trusty32' (v14.04) for 'virtualbox'!
 ```
+
+To get a list of images go to [Vagrant Cloud](http://www.vagrantup.com/)
 
 * Run the following command to start the virtual machine
 
@@ -29,16 +31,15 @@ vagrant box add ubuntu/trusty32-juju
 vagrant up
 
 Bringing machine 'default' up with 'virtualbox' provider...
-==> default: Checking if box 'ubuntu/trusty32-juju' is up to date...
+==> default: Importing base box 'ubuntu/trusty32'...
+==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'ubuntu/trusty32' is up to date...
+==> default: Setting the name of the VM: vroom_default_1405902902364_25582
 ==> default: Clearing any previously set forwarded ports...
 ==> default: Clearing any previously set network interfaces...
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat
-    default: Adapter 2: hostonly
 ==> default: Forwarding ports...
-    default: 22 => 2122 (adapter 1)
-    default: 80 => 6080 (adapter 1)
-    default: 8001 => 8001 (adapter 1)
     default: 22 => 2222 (adapter 1)
 ==> default: Booting VM...
 ==> default: Waiting for machine to boot. This may take a few minutes...
@@ -47,11 +48,12 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: SSH auth method: private key
     default: Error: Connection timeout. Retrying...
     default: Error: Connection timeout. Retrying...
+    default: Error: Remote connection disconnect. Retrying...
+    default: Error: Remote connection disconnect. Retrying...
 ==> default: Machine booted and ready!
 ==> default: Checking for guest additions in VM...
-==> default: Configuring and enabling network interfaces...
 ==> default: Mounting shared folders...
-    default: /vagrant => C:/Users/Emanuelle/Workspace/vms/vagrant_getting_started
+    default: /vagrant => C:/Users/Emanuelle/Workspace/projects/volcra/vroom
 ==> default: VM already provisioned. Run `vagrant provision` or use `--provision` to force it
 ```
 
@@ -60,10 +62,20 @@ Bringing machine 'default' up with 'virtualbox' provider...
 ```
 ssh -p 2222 127.0.0.1
 
-Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+Using username "vagrant".
+vagrant@127.0.0.1's password:
+Welcome to Ubuntu 14.04 LTS (GNU/Linux 3.13.0-32-generic i686)
 
  * Documentation:  https://help.ubuntu.com/
-Welcome to your Vagrant-built virtual machine.
-Last login: Sun Jul 20 23:40:34 2014 from 10.0.2.2
-vagrant@precise32:~$
+
+ System information disabled due to load higher than 1.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+vagrant@vagrant-ubuntu-trusty-32:~$
 ```
